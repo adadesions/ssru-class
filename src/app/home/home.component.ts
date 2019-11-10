@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-home',
@@ -21,6 +22,7 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
+    private service: DataService
   ) { }
 
   ngOnInit() {
@@ -29,6 +31,8 @@ export class HomeComponent implements OnInit {
         this.dataDB = data['result'].service;
         console.log(this.dataDB);
     });
+
+    this.service.getHello('SSRU');
   }
 
 }
