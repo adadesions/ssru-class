@@ -26,13 +26,13 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.http.get('http://localhost:3000/data')
+    this.service.getUsers()
     .subscribe( data => {
         this.dataDB = data['result'].service;
         console.log(this.dataDB);
     });
 
-    this.service.getHello('SSRU');
+    // this.service.getHello('SSRU');
   }
 
 }
