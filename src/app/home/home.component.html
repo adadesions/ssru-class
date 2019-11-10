@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row">
+        <div *ngFor="let data of dataset" class="col-lg-4">
+            <div class="card" style="width: 18rem; margin-bottom: 1em;">
+                <img src="{{ data.imgSrc }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"> {{ data.title }} </h5>
+                    <p class="card-text"> {{ data.content }} </p>
+                    <a routerLink="/profile" class="btn btn-{{data.type}}"> {{ data.button }} </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
